@@ -24,7 +24,7 @@ setup(
     author='Jordan Kowal',
     author_email='kowaljordan@gmail.com',
     url='https://github.com/Jordan-Kowal/sudoku_manager',
-    download_url='https://github.com/Jordan-Kowal/sudoku_manager/archive/v1.0.0.tar.gz',
+    download_url='https://github.com/Jordan-Kowal/sudoku_manager/archive/v1.0.1.tar.gz',
     keywords=['sudoku', 'generator', 'solver', 'easy', "generate", "solve"],
     install_requires=[],
     classifiers=[
