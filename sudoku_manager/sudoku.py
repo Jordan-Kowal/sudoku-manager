@@ -19,8 +19,8 @@ from time import perf_counter
 # Third-party
 
 # Local
-from classes.area import Area
-from classes.cell import Cell
+from sudoku_manager.area import Area
+from sudoku_manager.cell import Cell
 
 
 # --------------------------------------------------------------------------------

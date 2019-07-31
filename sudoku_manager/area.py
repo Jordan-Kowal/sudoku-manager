@@ -15,7 +15,7 @@ Classes:
 # Third-party
 
 # Local
-from classes.cell import Cell
+from sudoku_manager.cell import Cell
 
 
 # --------------------------------------------------------------------------------
