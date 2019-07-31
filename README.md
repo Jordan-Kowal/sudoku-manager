@@ -17,4 +17,4 @@ Note that :
 
 ## **How it works**
 - **To generate a sudoku**: simply call the `Sudoku.generate_as_json()` method with the correct settings. You will then have a grid in a JSON format
-- **To solve a sudoku**: create a Sudoku instance (either from the normal constructor or a classmethod) and use the .solve() method to solve it
+- **To solve a sudoku**: create a Sudoku instance (either from the normal constructor or a classmethod) and use the `.solve()` method to solve it
