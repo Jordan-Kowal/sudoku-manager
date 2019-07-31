@@ -82,7 +82,7 @@ class Sudoku:
     Class Methods:
         create_from_81: Creates a Sudoku instance using a 81-element list instead of a 9x9 list
         create_from_json: Creates a Sudoku from a grid stored in a JSON file
-        generate_as_json: Loops until a valid sudoku is generated, based on the difficulty settings
+        generate_grid: Loops until a valid sudoku is generated, based on the difficulty settings
 
     Static Methods:
         output_as_json: Jsonify the data and writes in the file at the given path
@@ -392,7 +392,7 @@ class Sudoku:
         return cls(unsolved_grid)
 
     @classmethod
-    def generate_as_json(cls, level, path):
+    def generate_grid(cls, level, path=None, to_json=False):
         """
         Description:
             Loops until a valid sudoku is generated, based on the difficulty settings
@@ -405,7 +405,8 @@ class Sudoku:
             Once the timing is OK, we will save the starting grid and output it as JSON
         Args:
             level (int): The difficulty of the sudoku
-            path (str): Output path for the JSON file
+            path (str, optional): Output path for the JSON file. Only useful is to_json==True. Default to None.
+            to_json (bool, optional): Indicates if the grid should be output in a JSON file instead of returned. Default to False.
         Raises:
             KeyError: 'level' argument must be in Sudoku.DIFFICULTIES.keys()
         """
@@ -441,9 +442,12 @@ class Sudoku:
             sudoku.solve(time_limit=level_info["max_time"])
             # If solved in time, then we output it as JSON, else we restart the process
             if sudoku.solved and sudoku.time >= level_info["min_time"]:
-                data = {"unsolved": new_grid, "solved": sudoku.solved_grid.copy()}
-                cls.output_as_json(data, path)
-                break
+                if to_json:
+                    data = {"unsolved": new_grid, "solved": sudoku.solved_grid.copy()}
+                    cls.output_as_json(data, path)
+                    return
+                else:
+                    return new_grid
 
     ####################
     #  Static Methods  #
