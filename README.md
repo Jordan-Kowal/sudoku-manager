@@ -1,7 +1,7 @@
 # Sudoku Manager
 
 ## **Description**
-This package is made for easy sudoku generation and solving. Using the main Sudoku class, you'll easily be able to generate random sudoku (with a difficulty setting), load existing sudokus from different formats, and solve those sudokus. The sudoku class has attributes dedicated to performance and traceback, allowing you to study its behavior.
+This package is made for easy sudoku generation and solving. Using the main Sudoku class, you'll easily be able to generate random sudokus (with a difficulty setting), load existing sudokus from different formats, and solve those sudokus. The Sudoku class has attributes dedicated to performance and backtracing, allowing you to study its behavior.
 
 ## **What it contains**
 The module contains 3 classes:
@@ -16,5 +16,8 @@ Note that :
 - Each Cell instance is stored into 3 areas (1 row, 1 column, and 1 square)
 
 ## **How it works**
-- **To generate a sudoku**: simply call the `Sudoku.generate_as_json()` method with the correct settings. You will then have a grid in a JSON format
-- **To solve a sudoku**: create a Sudoku instance (either from the normal constructor or a classmethod) and use the `.solve()` method to solve it
+- To **install** the module, use `pip install sudoku-manager`
+- To **import** the module, use `import sudoku_manager`
+- It is likely you will only use the Sudoku class. You can import it using `from sudoku_manager.sudoku import Sudoku`
+- To **generate** a sudoku: simply call the `Sudoku.generate_grid()` method with the correct settings. It will either output a JSON or return a grid.
+- To **solve** a sudoku: create a Sudoku instance (either from the normal constructor or a classmethod) and use the `.solve()` method to solve it.
