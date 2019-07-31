@@ -18,7 +18,7 @@ from distutils.core import setup
 setup(
     name='sudoku_manager',
     packages=['sudoku_manager'],
-    version='1.0.0',
+    version='1.0.1',
     license='MIT',
     description='Package to easily generate and/or solve any 9x9 sudoku grid',
     author='Jordan Kowal',
